@@ -1,11 +1,10 @@
 package com.javr.examplemvvm.domain
 
-import com.javr.examplemvvm.data.QuoteRespository
+import com.javr.examplemvvm.data.QuoteRepository
 import com.javr.examplemvvm.data.model.QuoteModel
+import javax.inject.Inject
 
-class GetQuotesUseCase {
-    private val repository = QuoteRespository()
-
-    suspend operator fun invoke(): List<QuoteModel>? = repository.getAllQuotes()
+class GetQuotesUseCase @Inject constructor(private val repository: QuoteRepository){
+    suspend operator fun invoke() = repository.getAllQuotes()
 
 }

@@ -1,7 +1,9 @@
 package com.javr.examplemvvm.data.model
 
-class QuoteProvider {
-    companion object {
-        var quotesList: List<QuoteModel> = emptyList()
-    }
+import javax.inject.Inject
+import javax.inject.Singleton
+
+@Singleton
+class QuoteProvider @Inject constructor() {
+    var quotesList: List<QuoteModel> = emptyList()
 }
